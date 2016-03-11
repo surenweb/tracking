@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\logo.png",
+        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\drawable-hdpi\\logo.png"
+    }
+]

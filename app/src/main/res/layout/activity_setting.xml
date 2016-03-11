@@ -1,0 +1,133 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp" >
+        
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="PassCode"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/txtSettingPassCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Enter Pass Code"
+                android:imeOptions="flagNoExtractUi" />
+
+        </TableRow>  
+  </TableLayout>
+  
+  <Button
+	        android:id="@+id/btnCheckPasscode"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="right"
+	        android:text="Check Code" />
+    
+  <TableLayout
+      android:id="@+id/tblSettingForm"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:padding="3dp"
+      android:visibility="visible" >
+             
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Mobile ID" />
+
+            <EditText
+                android:id="@+id/txtSettingMobileID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="phone" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Url" />
+		</TableRow>
+		
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            
+            <EditText
+                android:id="@+id/txtSettingUrl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:maxLength="140"
+                android:singleLine="true"
+                android:textSize="12dp" />
+            
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Refresh Time (sec.)" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtSettingRefreshRate"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:maxLength="20"  />
+            
+        </TableRow> 
+        
+         <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            
+            >
+
+             <Button
+                 android:id="@+id/btnSaveSetting"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:gravity="right"
+                 android:text="Save Setting" />
+
+         </TableRow>
+    </TableLayout>
+
+   
+
+</LinearLayout>
