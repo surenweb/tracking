@@ -7,46 +7,105 @@
                     "startLine": 2,
                     "startColumn": 4,
                     "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 19,
+                    "endOffset": 149
+                },
+                "from": {
+                    "file": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 219,
+                        "endLine": 9,
+                        "endColumn": 19,
+                        "endOffset": 315
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 154,
                     "endColumn": 49,
-                    "endOffset": 100
+                    "endOffset": 199
                 },
                 "from": {
                     "file": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 1,
-                        "startOffset": 58,
+                        "startOffset": 60,
                         "endColumn": 46,
-                        "endOffset": 103
+                        "endOffset": 105
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 3,
+                    "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 105,
+                    "startOffset": 204,
                     "endColumn": 51,
-                    "endOffset": 152
+                    "endOffset": 251
                 },
                 "from": {
                     "file": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 1,
-                        "startOffset": 105,
+                        "startOffset": 108,
                         "endColumn": 48,
-                        "endOffset": 152
+                        "endOffset": 155
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 4,
+                    "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 157,
+                    "startOffset": 256,
+                    "endColumn": 38,
+                    "endOffset": 290
+                },
+                "from": {
+                    "file": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\values\\color.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 1,
+                        "startOffset": 158,
+                        "endColumn": 35,
+                        "endOffset": 192
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 295,
+                    "endColumn": 39,
+                    "endOffset": 330
+                },
+                "from": {
+                    "file": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\values\\color.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 1,
+                        "startOffset": 195,
+                        "endColumn": 36,
+                        "endOffset": 230
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 335,
                     "endColumn": 57,
-                    "endOffset": 210
+                    "endOffset": 388
                 },
                 "from": {
                     "file": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\values\\dimens.xml",
@@ -61,11 +120,11 @@
             },
             {
                 "to": {
-                    "startLine": 5,
+                    "startLine": 10,
                     "startColumn": 4,
-                    "startOffset": 215,
+                    "startOffset": 393,
                     "endColumn": 55,
-                    "endOffset": 266
+                    "endOffset": 444
                 },
                 "from": {
                     "file": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\values\\dimens.xml",
@@ -80,69 +139,69 @@
             },
             {
                 "to": {
-                    "startLine": 6,
+                    "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 271,
+                    "startOffset": 449,
                     "endColumn": 52,
-                    "endOffset": 319
+                    "endOffset": 497
                 },
                 "from": {
                     "file": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 108,
+                        "startOffset": 109,
                         "endColumn": 52,
-                        "endOffset": 156
+                        "endOffset": 157
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 7,
+                    "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 324,
+                    "startOffset": 502,
                     "endColumn": 48,
-                    "endOffset": 368
+                    "endOffset": 546
                 },
                 "from": {
                     "file": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 58,
+                        "startOffset": 59,
                         "endColumn": 48,
-                        "endOffset": 102
+                        "endOffset": 103
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 8,
+                    "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 373,
+                    "startOffset": 551,
                     "endColumn": 52,
-                    "endOffset": 421
+                    "endOffset": 599
                 },
                 "from": {
                     "file": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 162,
+                        "startOffset": 163,
                         "endColumn": 52,
-                        "endOffset": 210
+                        "endOffset": 211
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 9,
+                    "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 426,
-                    "endLine": 15,
+                    "startOffset": 604,
+                    "endLine": 20,
                     "endColumn": 12,
-                    "endOffset": 712
+                    "endOffset": 890
                 },
                 "from": {
                     "file": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\values\\styles.xml",
@@ -158,12 +217,12 @@
             },
             {
                 "to": {
-                    "startLine": 16,
+                    "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 717,
-                    "endLine": 20,
+                    "startOffset": 895,
+                    "endLine": 25,
                     "endColumn": 12,
-                    "endOffset": 883
+                    "endOffset": 1061
                 },
                 "from": {
                     "file": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\values\\styles.xml",

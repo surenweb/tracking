@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
 		Button btnPatrol =(Button) findViewById(R.id.btnPatrol ); 		
 		Button btnSetting =(Button) findViewById(R.id.btnSetting ); 
 		Button btnExit =(Button) findViewById(R.id.btnExit ); 
-		
+		Button btnEvent = (Button) findViewById(R.id.btnEvent);
 
 		TextView lblMainMobileID = (TextView)findViewById(R.id.lblMainMobileID ) ;	
 		lblMainMobileID.setText("Mobile ID : "+ FastConfig.appMobileID );
@@ -54,17 +54,25 @@ public class MainActivity extends Activity {
 			       	startActivity(intent);
 		       }
 		});
-		
-		btnSetting.setOnClickListener(new OnClickListener() {	      
-	        @Override
-	       	public void onClick(View v) {	
-		       	Intent intent = new Intent(MainActivity.this,Setting.class);
-		       	intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-		       	startActivity(intent);
-	       }
+
+		btnEvent.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this,EventCreate.class);
+				startActivity(intent);
+			}
 		});
-		
-		btnExit.setOnClickListener(new OnClickListener() {	      
+
+		btnSetting.setOnClickListener(new OnClickListener() {
+	        @Override
+	       	public void onClick(View v) {
+		       	Intent intent = new Intent(MainActivity.this,Setting.class);
+		       	startActivity(intent);
+		       }
+		});
+
+
+		btnExit.setOnClickListener(new OnClickListener() {
 	        @Override
 	       	public void onClick(View v) {	
 	        	MainActivity.this.finish();

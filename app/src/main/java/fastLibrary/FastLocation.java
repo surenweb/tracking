@@ -12,10 +12,11 @@ import android.widget.Toast;
 
 
 public class FastLocation implements LocationListener,FastGpsListener{
-	 public static String Lat;
-	 public static String Lon;
-	 public static String UpdateDate ;
-	 public static String ListnerStatus ;
+	 public static String Lat="";
+	 public static String Lon="";
+	 public static String Accuracy="" ;
+	 public static String UpdateDate="" ;
+	 public static String ListnerStatus="" ;
 
  	//EVENT TO Over-ride ON CLIENT 
 	 private static FastGpsListener mOnEventListener;
@@ -53,6 +54,7 @@ public class FastLocation implements LocationListener,FastGpsListener{
 	            
 	            Lat = (Double.toString(plat));
 	            Lon = (Double.toString(plong));
+				Accuracy = (Double.toString(acc));
 	            UpdateDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()); 
 	            
 	            //Fire Location Changed

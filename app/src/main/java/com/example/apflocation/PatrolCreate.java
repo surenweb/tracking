@@ -1,7 +1,6 @@
 package com.example.apflocation;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -10,14 +9,17 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import fastLibrary.AdapterSpinner;
+import fastLibrary.ClassMetaData;
 import fastLibrary.ClassPatrol;
 import fastLibrary.FastApp;
 import fastLibrary.FastConfig;
+import fastLibrary.FastKeyValue;
 
 public class PatrolCreate extends Activity  {
 
@@ -30,34 +32,34 @@ public class PatrolCreate extends Activity  {
 		
 		Button btnStartPatrol =(Button) findViewById(R.id.btnStartPatrol );  //Create Patrol Button 	
 
-		//## Patrol Type Fill 
+		// Patrol Type Spinner
+		List<FastKeyValue> lstPatrolType = new ClassMetaData().GetAllByTag("PatrolType");
+
+		AdapterSpinner adapterPatrolType = new AdapterSpinner(FastApp.getContext(),
+				R.layout.layout_spinner_item,
+				lstPatrolType);
+
+		adapterPatrolType.setDropDownViewResource(R.layout.layout_spinner_dropdown_item);
+
 		Spinner spinPatrolType = (Spinner) findViewById(R.id.spinPatrolType);
-	    ArrayAdapter<String> adapter;
-	    List<String> list;
+		spinPatrolType.setAdapter(adapterPatrolType); // Set the custom adapter to the spinner
 
-	    list = new ArrayList<String>();
-	    list.add("Regular");
-	    list.add("LRP");
-	    list.add("Hasty");
-	    
-	    adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, list);
-	    adapter.setDropDownViewResource(R.layout.spinner_dropwn_item);
-	    spinPatrolType.setAdapter(adapter);
-	    
-	    //## Patrol On Fill 
-  		Spinner spinPatrolOn = (Spinner) findViewById(R.id.spinPatrolOn);
-  	    ArrayAdapter<String> adapterOn;
-  	    List<String> listOn;
 
-	  	listOn = new ArrayList<String>();
-	  	listOn.add("Foot");
-	  	listOn.add("Cycle");
-	  	listOn.add("Motercycle");
-	  	listOn.add("Vehicle");
-	    
-	  	adapterOn = new ArrayAdapter<String>(getApplicationContext(),R.layout.spinner_item, listOn);
-  		adapterOn.setDropDownViewResource(R.layout.spinner_dropwn_item);
-  	    spinPatrolOn.setAdapter(adapterOn);
+	    //## Patrol On Fill
+		List<FastKeyValue> lstPatrolOn = new ClassMetaData().GetAllByTag("PatrolOn");
+
+		AdapterSpinner adapterPatrolOn = new AdapterSpinner(FastApp.getContext(),
+				R.layout.layout_spinner_item,
+				lstPatrolOn);
+		adapterPatrolOn.setDropDownViewResource(R.layout.layout_spinner_dropdown_item);
+
+		Spinner spinPatrolOn = (Spinner) findViewById(R.id.spinPatrolOn);
+		spinPatrolOn.setAdapter(adapterPatrolOn); // Set the custom adapter to the spinner
+
+		/*
+	  	adapterOn = new ArrayAdapter<String>(getApplicationContext(),R.layout.layout_spinner_item, listOn);
+  		adapterOn.setDropDownViewResource(R.layout.layout_spinner_dropdown_item);
+  	    spinPatrolOn.setAdapter(adapterOn); */
 	    
 	    
 		//## IF RUNNING Patrol Go To That Patrol ##//		
@@ -83,8 +85,8 @@ public class PatrolCreate extends Activity  {
 	        	 //Create New Patrol
 	        	 ClassPatrol patrol = new ClassPatrol();
 	        	 patrol.CaseTitle = txtCaseTitle.getText().toString();
-	        	 patrol.PatrolType = spinPatrolType.getSelectedItem().toString();
-	        	 patrol.PatrolOn = spinPatrolOn.getSelectedItem().toString();
+	        	 patrol.PatrolType = ((FastKeyValue)spinPatrolType.getSelectedItem()).key;
+	        	 patrol.PatrolOn = ((FastKeyValue)spinPatrolOn.getSelectedItem()).key;
 	        	 patrol.TotalNafri = txtTotalTroops.getText().toString();
 	        	 
 	        	 patrol.StartDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date());

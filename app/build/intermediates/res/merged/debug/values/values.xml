@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="image_ids">
+        <item>@drawable/ic_launcher</item>
+    </string-array>
     <color name="app_color_error">#bb1100</color>
     <color name="app_color_success">#11bb00</color>
+    <color name="blue">#00abea</color>
+    <color name="white">#ffffff</color>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <string name="action_settings">Settings</string>

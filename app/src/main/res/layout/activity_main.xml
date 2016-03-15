@@ -12,36 +12,54 @@
         android:id="@+id/btnOld"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Previous Data"
         android:layout_above="@+id/btnSetting"
-        android:layout_alignLeft="@+id/btnExit"
-        android:layout_alignRight="@+id/btnExit"
-        android:text="Previous Data" />
+        android:layout_alignLeft="@+id/btnSetting"
+        android:layout_alignStart="@+id/btnSetting"
+        android:layout_alignRight="@+id/btnSetting"
+        android:layout_alignEnd="@+id/btnSetting" />
 
     <Button
         android:id="@+id/btnExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="           Exit            " />
+        android:text="Exit"
+        android:layout_below="@+id/btnSetting"
+        android:layout_alignLeft="@+id/btnSetting"
+        android:layout_alignStart="@+id/btnSetting"
+        android:layout_alignRight="@+id/btnSetting"
+        android:layout_alignEnd="@+id/btnSetting" />
 
     <Button
         android:id="@+id/btnPatrol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="New Patrol"
+        android:layout_above="@+id/btnEvent"
+        android:layout_alignLeft="@+id/btnEvent"
+        android:layout_alignStart="@+id/btnEvent"
+        android:layout_alignRight="@+id/btnEvent"
+        android:layout_alignEnd="@+id/btnEvent" />
+
+    <Button
+        android:id="@+id/btnEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event"
         android:layout_above="@+id/btnOld"
         android:layout_alignLeft="@+id/btnOld"
+        android:layout_alignStart="@+id/btnOld"
         android:layout_alignRight="@+id/btnOld"
-        android:text="New Patrol" />
+        android:layout_alignEnd="@+id/btnOld" />
 
     <Button
         android:id="@+id/btnSetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnExit"
-        android:layout_alignLeft="@+id/btnExit"
-        android:layout_alignRight="@+id/btnOld"
-        android:text="Setting" />
+        android:text="       Setting       "
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:singleLine="true" />
 
     <TextView
         android:id="@+id/lblMainServer"
@@ -49,7 +67,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="Server : " />
+        android:text="Server : "
+        android:textSize="12dp" />
 
     <TextView
         android:id="@+id/lblMainMobileID"

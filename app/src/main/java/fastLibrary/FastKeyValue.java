@@ -2,9 +2,16 @@ package fastLibrary;
 
 //Custom class for return values
 public class FastKeyValue {
-	 public String column, value;
+	 public String key, value;
 	 public FastKeyValue(String c, String v)
 	 {
-	     column = c; value = v;
+	     key = c; value = v;
 	 }
+
+
+	@Override
+	public String toString() {
+		return value.toString();
+	}
+
 }

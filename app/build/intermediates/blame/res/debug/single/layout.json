@@ -1,19 +1,23 @@
 [
     {
-        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\spinner_dropwn_item.xml",
-        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\spinner_dropwn_item.xml"
+        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_grid_item.xml",
+        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\layout_grid_item.xml"
     },
     {
-        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_patrol.xml",
-        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\activity_patrol.xml"
+        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_event.xml",
+        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\activity_event.xml"
     },
     {
-        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\spinner_item.xml",
-        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\spinner_item.xml"
+        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_spinner_item.xml",
+        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\layout_spinner_item.xml"
     },
     {
         "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\splash_screen.xml",
         "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\splash_screen.xml"
+    },
+    {
+        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_patrol.xml",
+        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\activity_patrol.xml"
     },
     {
         "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_patrol_create.xml",
@@ -22,6 +26,10 @@
     {
         "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
         "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_spinner_dropdown_item.xml",
+        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\layout_spinner_dropdown_item.xml"
     },
     {
         "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting.xml",

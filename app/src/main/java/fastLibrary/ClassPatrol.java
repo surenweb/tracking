@@ -5,7 +5,7 @@ import java.util.List;
 import android.util.Log;
 
 public class ClassPatrol {
-	FastConfig share = new FastConfig();
+
 	public int ID;public int MobileID;public String CaseTitle;public String StartDate;public String EndDate;public int IsFinished ;
 	public int SyncStatus;	public int TotalSyncTrack;	public int TotalUnSyncTrack ;
 	public String PatrolType ;

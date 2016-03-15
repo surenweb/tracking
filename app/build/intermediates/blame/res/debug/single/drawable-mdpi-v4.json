@@ -4,6 +4,10 @@
         "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\grid_color_selector.xml",
+        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\drawable-mdpi\\grid_color_selector.xml"
+    },
+    {
         "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\logo.png",
         "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\drawable-mdpi\\logo.png"
     }

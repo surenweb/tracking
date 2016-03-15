@@ -3,5 +3,7 @@
     
 	<color name="app_color_error">#bb1100</color>
 	<color name="app_color_success">#11bb00</color>
+	<color name="blue">#00abea</color>
+	<color name="white">#ffffff</color>
 
 </resources>
