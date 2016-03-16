@@ -45,7 +45,7 @@ public class FastSyncData {
 
                 UploadTrack();
 
-                UploadActivity();
+                UploadEvent();
 
                 UpdateMetaData();
 
@@ -112,9 +112,32 @@ public class FastSyncData {
             Log.d(FastConfig.appLogTag, "Track Synced but not updated, ID : " + track_keyval.key);
 
     }
-    //## == Upload Activities ==
-    private void UploadActivity()
+    //## == Upload Events  ==
+    private void UploadEvent()
     {
+        //## UPLOAD Track
+        ClassEvent event = new ClassEvent();
+        FastKeyValue event_hash = event.GetFson(5); // Get Fson of 5 Patrol
+
+        if (event_hash.value.length() < 5) return;
+
+        // String resText = CallServer("", "track", track_keyval.value);
+        String resText = Call_One("", "event", event_hash.value);
+
+
+        Log.d(FastConfig.appLogTag, "Event-Upload Responce :" + resText);
+
+        if(resText.length()<1 )  return ;
+
+        String resChar = resText.substring(0, 1); // resText May contain other info from service page
+
+        if(!resChar.equalsIgnoreCase("1")) return;
+
+
+        if (event.SetSynced(event_hash.key))
+            Log.d(FastConfig.appLogTag, "Event Synced & updated ID :" + event_hash.key);
+        else
+            Log.d(FastConfig.appLogTag, "Event Synced but not updated, ID : " + event_hash.key);
 
     }
 
