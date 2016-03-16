@@ -44,8 +44,8 @@ public class AdapterGrid extends ArrayAdapter {
             holder = (ViewHolder) row.getTag();
         }
 
-        ImageItem item = (ImageItem) data.get(position);
-        holder.imageTitle.setText(item.getTitle());
+        ClassImage item = (ClassImage) data.get(position);
+        holder.imageTitle.setText(item.Title);
         holder.image.setImageBitmap(item.getImage());
         return row;
     }

@@ -25,7 +25,7 @@ public class FastLocation implements LocationListener,FastGpsListener{
     	 if (mOnEventListener == null) //## SingleTone 
     	 {
     		 mOnEventListener = listener;
-    		 Log.d("myLog","Listner Added to FastLocation");
+			 Log.d(FastConfig.appLogTag,"Listner Added to FastLocation");
     	 }
      }
 
@@ -64,7 +64,7 @@ public class FastLocation implements LocationListener,FastGpsListener{
 	          
 	            if(FastConfig.appRunningPatrolID == null || FastConfig.appRunningPatrolID.equalsIgnoreCase(""))  //## IF Patrol Finished, Return
 	            {
-	            	Log.d("myLog","track has no patrol");
+					Log.d(FastConfig.appLogTag,"gps location has no running patrol");
 	            	return ; 
 	            }
 	            	
@@ -79,8 +79,8 @@ public class FastLocation implements LocationListener,FastGpsListener{
          	    track.PatrolID = Integer.parseInt( FastConfig.appRunningPatrolID);
          	   
          	    if(track.Update())
-         	    {	         	    	
-         	    	Log.d("myLog","Track Added" );	
+         	    {
+					Log.d(FastConfig.appLogTag,"Track Added" );
          	    	Toast.makeText(FastApp.getContext(), "Lat-"+ Lat + " Lon-"+ Lon, Toast.LENGTH_SHORT).show();
          	    	
          	    	//Fire Track Added 

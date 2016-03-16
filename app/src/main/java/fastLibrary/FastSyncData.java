@@ -32,12 +32,12 @@ public class FastSyncData {
                 // Do your task
 
                 if (!FastTask.isNetworkAvailable()) {
-                    Log.d("myApp", "Network not ready");
+                    Log.d(FastConfig.appLogTag, "Network not ready");
                     return;
                 }
 
                 if (FastConfig.appMobileID == null) {
-                    Log.d("myApp", "Config file not loaded ");
+                    Log.d(FastConfig.appLogTag, "Config file not loaded ");
                     return;
                 }
 
@@ -68,7 +68,7 @@ public class FastSyncData {
         //String resText = CallServer("","patrol", patrol_keyval.value);
         String resText = Call_One("", "patrol", patrol_keyval.value);
 
-        Log.d("myApp", "Patrol-Upload Responce :" + resText);
+        Log.d(FastConfig.appLogTag, "Patrol-Upload Responce :" + resText);
 
         if(resText.length()<1 )  return ;
 
@@ -78,9 +78,9 @@ public class FastSyncData {
 
 
         if (patrol.SetSynced(patrol_keyval.key))
-            Log.d("myApp", "Patrol Synced & updated, ID : " + patrol_keyval.key);
+            Log.d(FastConfig.appLogTag, "Patrol Synced & updated, ID : " + patrol_keyval.key);
         else
-            Log.d("myApp", "Patrol Synced but not updated, ID : " + patrol_keyval.key);
+            Log.d(FastConfig.appLogTag, "Patrol Synced but not updated, ID : " + patrol_keyval.key);
 
     }
 
@@ -97,7 +97,7 @@ public class FastSyncData {
         String resText = Call_One("", "track", track_keyval.value);
 
 
-        Log.d("myApp", "Track-Upload Responce :" + resText);
+        Log.d(FastConfig.appLogTag, "Track-Upload Responce :" + resText);
 
         if(resText.length()<1 )  return ;
 
@@ -107,9 +107,9 @@ public class FastSyncData {
 
 
         if (patrol_track.SetSynced(track_keyval.key))
-            Log.d("myApp", "Track Synced & updated ID :" + track_keyval.key);
+            Log.d(FastConfig.appLogTag, "Track Synced & updated ID :" + track_keyval.key);
         else
-            Log.d("myApp", "Track Synced but not updated, ID : " + track_keyval.key);
+            Log.d(FastConfig.appLogTag, "Track Synced but not updated, ID : " + track_keyval.key);
 
     }
     //## == Upload Activities ==
@@ -130,7 +130,7 @@ public class FastSyncData {
         String resText ="";
 
         if (!FastTask.isNetworkAvailable()) {
-            Log.d("myApp", "Network not ready");
+            Log.d(FastConfig.appLogTag, "Network not ready");
             return resText ;
         }
 
@@ -170,7 +170,7 @@ public class FastSyncData {
             }
         }
         catch (Exception e )  {
-            Log.d("myApp", "HTTP Client ERROR :" + e.getMessage().toString());
+            Log.d(FastConfig.appLogTag, "HTTP Client ERROR :" + e.getMessage().toString());
         }
 
         return resText;
@@ -216,15 +216,15 @@ public class FastSyncData {
                     response += temp;
                 }
             } else {
-                Log.e("myApp", "14 - False - HTTP_OK");
+                Log.d(FastConfig.appLogTag, "14 - False - HTTP_OK");
                 response = "";
             }
 
         } catch (Exception e) {
             if(e.getMessage()!=null )
-                Log.d("myApp", "HTTP HttpURLConnection ERROR :" + e.getMessage().toString());
+                Log.d(FastConfig.appLogTag, "HTTP HttpURLConnection ERROR :" + e.getMessage().toString());
             else
-                Log.d("myApp", "HTTP HttpURLConnection ERROR :" + e.toString());
+                Log.d(FastConfig.appLogTag, "HTTP HttpURLConnection ERROR :" + e.toString());
 
         } finally {
             if (inStream != null) {
@@ -232,7 +232,7 @@ public class FastSyncData {
                     // this will close the bReader as well
                     inStream.close();
                 } catch (IOException ignored) {
-                    Log.d("myApp", "IOException ERROR :" + ignored.getMessage().toString());
+                    Log.d(FastConfig.appLogTag, "IOException ERROR :" + ignored.getMessage().toString());
                 }
             }
             if (urlConnection != null) {

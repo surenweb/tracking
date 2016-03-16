@@ -4,16 +4,22 @@ import java.util.List;
 
 public class ClassPatrolTrack {
 	
-	public int ID;public int PatrolID;public String Lat;public String Lon;public String GpsDate; public double Accuracy;
+	public int ID;
+	public int MobileID;
+	public int PatrolID;public String Lat;public String Lon;public String GpsDate; public double Accuracy;
 	public int SyncStatus ;
 	
 	public ClassPatrolTrack()
 	{
-		ID=0;PatrolID=0;Lat="";Lon="";GpsDate="";Accuracy=0.0;
+		ID=0;
+		MobileID=Integer.parseInt(FastConfig.appMobileID );
+		PatrolID=0;Lat="";Lon="";GpsDate="";Accuracy=0.0;
 	}
 	
 	public ClassPatrolTrack(int argID)	
-	{	ID=0;PatrolID=0;Lat="";Lon="";GpsDate="";Accuracy=0.0;
+	{	ID=0;
+		MobileID=Integer.parseInt(FastConfig.appMobileID );
+		PatrolID=0;Lat="";Lon="";GpsDate="";Accuracy=0.0;
 		
 		if(argID>0){
 			String sql ="Select * from patrol_track where ID="+argID ;
@@ -48,7 +54,7 @@ public class ClassPatrolTrack {
 	public FastKeyValue GetFson(int limit )
 	{
 		//SELECT ONLY COLUMNS FOR SERVER  
-		String sql ="Select ID,PatrolID,Lat,Lon,GpsDate,Accuracy from patrol_track where SyncStatus=1 ORDER BY GpsDate  LIMIT " +limit  ;
+		String sql ="Select MobileID,PatrolID,Lat,Lon,GpsDate,Accuracy from patrol_track where SyncStatus=1 ORDER BY GpsDate  LIMIT " +limit  ;
 		FastDb db = new FastDb("dbLocation",FastApp.getContext());
 		FastKeyValue id_value= db.GetDumpText(sql);
 		return id_value;		
@@ -66,12 +72,12 @@ public class ClassPatrolTrack {
 		String sql ="";
 		if(this.ID==0)
 		{
-			sql ="INSERT INTO patrol_track (PatrolID,Lat,Lon,GpsDate,Accuracy,SyncStatus) VALUES "+
-					"('"+PatrolID+"','"+Lat+"','"+Lon+"','"+GpsDate + "','"+Accuracy+"',1)";
+			sql ="INSERT INTO patrol_track (MobileID,PatrolID,Lat,Lon,GpsDate,Accuracy,SyncStatus) VALUES "+
+					"("+MobileID+",'"+PatrolID+"','"+Lat+"','"+Lon+"','"+GpsDate + "','"+Accuracy+"',1)";
 		}
 		else
-		{	sql = "UPDATE patrol_track SET PatrolID=" +PatrolID +",Lat= '"+Lat+"',Lon='"+Lon+"',GpsDate='"+GpsDate+"' "+
-				 " ,Accuracy='"+Accuracy+"' WHERE ID="+ID ;
+		{	sql = "UPDATE patrol_track SET MobileID="+MobileID+",PatrolID=" +PatrolID +",Lat= '"+Lat+"',Lon='"+Lon+"'," +
+				  " GpsDate='"+GpsDate+"' "+ " ,Accuracy='"+Accuracy+"' WHERE ID="+ID ;
 		}
 		FastDb db = new FastDb("dbLocation",FastApp.getContext());
 		return db.RunDml(sql);			

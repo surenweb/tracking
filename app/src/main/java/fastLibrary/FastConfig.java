@@ -18,6 +18,9 @@ public class FastConfig {
 		public static String appRefreshTime;
 		public static String appLanguage ;
 
+		//##Debug
+		public static String appLogTag="myApp";
+
 		//## Constructor
 		/*
 		private SharedPreferences settings;
@@ -57,14 +60,16 @@ public class FastConfig {
 					" StartDate TEXT,EndDate TEXT,IsFinished INTEGER default 0,SyncStatus INTEGER default 0 );";
 
 			if(!db.RunDml(sql))
-				Log.d("myApp", "Could't Create Patrol Table");
+				Log.d(FastConfig.appLogTag, "Could't Create Patrol Table");
 
 			//## TABLE : patrol_track
 			sql = "CREATE TABLE IF NOT EXISTS patrol_track " +
-					"(ID INTEGER PRIMARY KEY, PatrolID INTEGER,Lat TEXT,Lon TEXT,GpsDate TEXT,Accuracy double,SyncStatus INTEGER default 0);";
+					"(ID INTEGER PRIMARY KEY, MobileID INTEGER,PatrolID INTEGER,Lat TEXT,Lon TEXT," +
+					" GpsDate TEXT,Accuracy double,SyncStatus INTEGER default 0);";
 
 			if(!db.RunDml(sql))
-				Log.d("myApp","Could't Create Track Table");
+				Log.d(FastConfig.appLogTag,"Could't Create Track Table");
+
 
 			//## TABLE : EVENT
 			sql = "CREATE TABLE IF NOT EXISTS event " +
@@ -72,7 +77,15 @@ public class FastConfig {
 					" Accuracy TEXT,CreatedDate TEXT,SyncStatus INTEGER default 0);";
 
 			if(!db.RunDml(sql))
-				Log.d("myApp","Could't Create event Table");
+				Log.d(FastConfig.appLogTag,"Could't Create event Table");
+
+			//## TABLE : event_image MobileID,EventID,Title,FilePath,SyncStatus
+			sql = "CREATE TABLE IF NOT EXISTS event_image " +
+					"(ID INTEGER PRIMARY KEY, MobileID INTEGER, EventID INTEGER,Title TEXT,FilePath TEXT," +
+					" SyncStatus INTEGER default 0);";
+
+			if(!db.RunDml(sql))
+				Log.d(FastConfig.appLogTag,"Could't Create event_image Table");
 
 
 			sql = "CREATE TABLE IF NOT EXISTS app_meta_data (" +
@@ -80,7 +93,7 @@ public class FastConfig {
 					" IsActive INTEGER, UpdateDate TEXT )";
 
 			if(!db.RunDml(sql))
-				Log.d("myApp","Could't create Meta Data Table");
+				Log.d(FastConfig.appLogTag,"Could't create Meta Data Table");
 			else
 			{
 				sql = "INSERT INTO app_meta_data (ID, Tag, Value, Title, TitleNp, Serial, IsActive, UpdateDate) VALUES " +
@@ -102,7 +115,7 @@ public class FastConfig {
 						" (16, 'EventType', 'firing', 'Firing', 'गोलि प्रहार', 1, 1, '2016-03-15 16:06:00');";
 
 				if(!db.RunDml(sql))
-					Log.d("myApp","Could't Insert Data in Meta Data Table : "+sql );
+					Log.d(FastConfig.appLogTag,"Could't Insert Data in Meta Data Table " );
 			}
 
 			//## Load Application Config File
@@ -116,11 +129,11 @@ public class FastConfig {
 				FastConfig.appLanguage = "NP";
 				FastConfig.SaveChanges();
 
-				Log.d("myLog","Default MobileId Given :" + FastConfig.appMobileID);
+				Log.d(FastConfig.appLogTag,"Default MobileId Given :" + FastConfig.appMobileID);
 			}
 			else
 			{
-				Log.d("myLog","MobileID : "+ FastConfig.appMobileID );
+				Log.d(FastConfig.appLogTag,"MobileID : "+ FastConfig.appMobileID );
 			}
 
 			//Fill Running Info

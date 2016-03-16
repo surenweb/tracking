@@ -27,7 +27,7 @@ public class FastDb
         	 db.execSQL(sql); return true ;
         } catch (Exception e) {
             // This will catch any exception, because they are all descended from Exception
-        	 Log.d("myLog","Error: Query=" +sql + " |Message: "+ e.getMessage());
+            Log.d(FastConfig.appLogTag,"Error: Query=" +sql + " |Message: "+ e.getMessage());
             return false;
         }
        
@@ -62,8 +62,8 @@ public class FastDb
              }
              cursor.close();
              
-        } catch (Exception e) {           
-        	 Log.d("myLog","Error: Query=" +sql + " |Message: "+ e.getMessage());
+        } catch (Exception e) {
+            Log.d(FastConfig.appLogTag,"Error: Query=" +sql + " |Message: "+ e.getMessage());
            return null ;
         } 
         
@@ -99,15 +99,15 @@ public class FastDb
                      
                      csvRow += "("+ strVal+ ")"+ ",";
                      csvID +=  cursor.getString(0) +",";
-                     
-                     Log.d("myLog","Unsynced Row : "+ strVal );
+
+                     Log.d(FastConfig.appLogTag,"Unsynced Row : "+ strVal );
                  }
                  while (cursor.moveToNext());
              }
              cursor.close();
              
-        } catch (Exception e) {           
-        	Log.d("myLog","Error: Query=" +sql + " |Message: "+ e.getMessage());
+        } catch (Exception e) {
+            Log.d(FastConfig.appLogTag,"Error: Query=" +sql + " |Message: "+ e.getMessage());
            return null ;
         }     
         if(csvID.length()>1 ) csvID = csvID.substring(0,csvID.length()-1 ); // Remove last , seperetor of csvID 

@@ -66,8 +66,8 @@ public class ClassPatrol {
 	    	FastDb userDb = new FastDb("dbLocation",FastApp.getContext());
 	    	String sql = " Select ID from patrol WHERE IsFinished != 1 "; // IsActive 0 --> Running , 1 --> Stopped 
 	    	List<FastRow> result = userDb.RunSql(sql);
-	    	
-	    	Log.d("myApp","Total unfinished Patrol : "+result.size() );
+
+			Log.d(FastConfig.appLogTag,"Total unfinished Patrol : "+result.size() );
 	    	
 	    	if(result.size()== 0)
 	    		return "";

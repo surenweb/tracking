@@ -86,6 +86,20 @@ public class ClassEvent {
         return db.RunDml(sql);
     }
 
+    public Integer TopInsertID ()
+    {
+        String sql = "SELECT ID from event order by ID DESC limit 1 ";
+        FastDb db = new FastDb("dbLocation",FastApp.getContext());
+
+        List<FastRow> lstResult = db.RunSql(sql);
+        if(lstResult!=null && lstResult.size()>0 )
+        {
+            FastRow row = lstResult.get(0);
+            return Integer.parseInt(row.get("ID"));
+        }
+        return -1 ;
+    }
+
     public Boolean Update() {
         String sql ="";
         if(this.ID==0)

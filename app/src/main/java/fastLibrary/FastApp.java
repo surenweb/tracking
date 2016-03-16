@@ -37,7 +37,7 @@ public class FastApp extends Application {
 		super.onCreate();
 		if (mContext == null) {
 			mContext = getApplicationContext();
-			Log.d("myLog", "context Added");
+			Log.d(FastConfig.appLogTag, "context Added");
 		}
 
 		if (locListener == null) {
@@ -45,11 +45,11 @@ public class FastApp extends Application {
 			locListener = new FastLocation();
 
 			try {
-				locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 20, locListener); //## 3 sec & 20 Meter
-						Log.d("myLog", "Location update requested from context");
-					} catch (Exception e) {
-						Toast.makeText(mContext, "Location Permission Not Found", Toast.LENGTH_SHORT).show();
-					}
+					locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 20, locListener); //## 3 sec & 20 Meter
+					Log.d(FastConfig.appLogTag, "Location update requested from context");
+				} catch (Exception e) {
+					Toast.makeText(mContext, "Location Permission Not Found", Toast.LENGTH_SHORT).show();
+				}
 			}
 		FastConfig.Prepare();
 		SyncData();
