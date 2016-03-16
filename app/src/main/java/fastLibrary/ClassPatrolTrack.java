@@ -54,7 +54,7 @@ public class ClassPatrolTrack {
 	public FastKeyValue GetFson(int limit )
 	{
 		//SELECT ONLY COLUMNS FOR SERVER  
-		String sql ="Select MobileID,PatrolID,Lat,Lon,GpsDate,Accuracy from patrol_track where SyncStatus=1 ORDER BY GpsDate  LIMIT " +limit  ;
+		String sql ="Select ID,MobileID,PatrolID,Lat,Lon,GpsDate,Accuracy from patrol_track where SyncStatus=1 ORDER BY GpsDate  LIMIT " +limit  ;
 		FastDb db = new FastDb("dbLocation",FastApp.getContext());
 		FastKeyValue id_value= db.GetDumpText(sql);
 		return id_value;		

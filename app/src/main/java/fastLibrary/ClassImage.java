@@ -62,10 +62,31 @@ public class ClassImage {
         }
     }
 
-    public boolean SetSynced(String arrID )
+    public void LoadTopImage ()
+    {
+        ID=0;
+        MobileID=Integer.parseInt(FastConfig.appMobileID );
+        EventID=0;Title ="";FilePath="";
+
+        String sql = "SELECT * from event_image WHERE SyncStatus=1 order by ID DESC limit 1";
+        FastDb db = new FastDb("dbLocation",FastApp.getContext());
+        List<FastRow> lstResult = db.RunSql(sql);
+
+        if(lstResult.size()>0 )
+        {
+            FastRow row = lstResult.get(0);
+            ID = Integer.parseInt(row.get("ID"));
+            EventID=Integer.parseInt(row.get("EventID"));
+            Title = row.get("Title");
+            FilePath=row.get("FilePath");
+            SyncStatus= Integer.parseInt(row.get("SyncStatus"));
+        }
+    }
+
+    public boolean SetSynced()
     {
         String sql = "UPDATE event_image SET SyncStatus=2 "+
-                " WHERE ID IN ("+arrID + ")" ;
+                " WHERE ID = "+ID ;
 
         FastDb db = new FastDb("dbLocation",FastApp.getContext());
         return db.RunDml(sql);
