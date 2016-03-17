@@ -26,7 +26,7 @@ import java.util.TimerTask;
 /**
  * Created by root on 3/11/2016.
  */
-public class FastSyncData {
+public class FastServer {
 
     Timer timer = new Timer();
 
