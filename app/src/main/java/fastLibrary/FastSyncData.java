@@ -79,7 +79,7 @@ public class FastSyncData {
         lstPostParams.add(new FastKeyValue("task","patrol"));
         lstPostParams.add(new FastKeyValue("data",patrol_keyval.value));
 
-        String resText = Call_One("", lstPostParams );
+        String resText = CallServer("", lstPostParams );
 
         Log.d(FastConfig.appLogTag, "Patrol-Upload Responce :" + resText);
 
@@ -110,7 +110,7 @@ public class FastSyncData {
         lstPostParams.add(new FastKeyValue("task","track"));
         lstPostParams.add(new FastKeyValue("data",track_keyval.value));
 
-        String resText = Call_One("", lstPostParams );
+        String resText = CallServer("", lstPostParams );
 
 
         Log.d(FastConfig.appLogTag, "Track-Upload Responce :" + resText);
@@ -141,7 +141,7 @@ public class FastSyncData {
         lstPostParams.add(new FastKeyValue("task","event"));
         lstPostParams.add(new FastKeyValue("data",event_hash.value));
 
-        String resText = Call_One("", lstPostParams );
+        String resText = CallServer("", lstPostParams );
         Log.d(FastConfig.appLogTag, "Event-Upload Responce :" + resText);
 
         if(resText.length()<1 )  return ;
@@ -184,7 +184,7 @@ public class FastSyncData {
         lstPostParams.add(new FastKeyValue("file_name",image.MobileID+"_"+image.EventID+"_"+image.Title));
         lstPostParams.add(new FastKeyValue("data",encodedString));
 
-        String resText = Call_One("", lstPostParams );
+        String resText = CallServer("", lstPostParams );
 
 
         Log.d(FastConfig.appLogTag, "Image-Upload Responce :" + resText);
@@ -210,7 +210,7 @@ public class FastSyncData {
     }
 
     //Master Page Caller
-    private String Call_One (String page,List<FastKeyValue> lstParamValue ) {
+    private String CallServer (String page,List<FastKeyValue> lstParamValue ) {
 
         HttpURLConnection urlConnection = null;
         URL url = null;
