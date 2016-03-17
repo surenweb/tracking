@@ -11,7 +11,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
@@ -30,13 +29,12 @@ import fastLibrary.AdapterGrid;
 import fastLibrary.AdapterSpinner;
 import fastLibrary.ClassEvent;
 import fastLibrary.ClassMetaData;
-import fastLibrary.ClassPatrol;
 import fastLibrary.FastApp;
 import fastLibrary.FastConfig;
 import fastLibrary.FastGpsListener;
 import fastLibrary.FastKeyValue;
 import fastLibrary.FastLocation;
-import fastLibrary.ImageItem;
+import fastLibrary.ClassImage;
 
 public class EventCreate extends Activity  {
 
@@ -53,7 +51,7 @@ public class EventCreate extends Activity  {
 	private Uri fileUri; // file url to store image/video
 
 	private Button btnTakePhoto;
-	private ArrayList<ImageItem> imageItems ;
+	private ArrayList<ClassImage> imageItems ;
 	private GridView gridView;
 	private AdapterGrid gridAdapter;
 
@@ -72,7 +70,7 @@ public class EventCreate extends Activity  {
 		txtEventLon.setText(FastLocation.Lon);
 
 		//## Camara Image Grid
-		imageItems = new ArrayList<ImageItem>();
+		imageItems = new ArrayList<ClassImage>();
 		gridView = (GridView) findViewById(R.id.eventImageGrid);
 		gridAdapter = new AdapterGrid(this, R.layout.layout_grid_item,imageItems );
 		gridView.setAdapter(gridAdapter);
@@ -133,15 +131,31 @@ public class EventCreate extends Activity  {
 
 				event.CreatedDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date());
 
-				if(event.Update())
+				if(!event.Update())
 				{
-					Toast.makeText(FastApp.getContext(), "Event Created", Toast.LENGTH_LONG).show();
-					finish();
-					return;  // Goes To Main Activity
+					Toast.makeText(FastApp.getContext(), "Event Not Created", Toast.LENGTH_LONG).show();
+					return;  // Return
 				}
 
+				Integer last_id = event.TopInsertID();
+				if(last_id < 0 )
+				{
+					Toast.makeText(FastApp.getContext(), "Event created without images : image failed to load ", Toast.LENGTH_LONG).show();
+					finish();
+				}
 
+				//## ADD Images Data
+				Integer totInsertedImage= 0 ;
+				for ( ClassImage image :imageItems ) {
+					image.EventID = last_id ;
+					if(!image.Update())
+						Log.d(FastConfig.appLogTag,"Can't add image : "+image.Title );
+					else
+						totInsertedImage= totInsertedImage+1;
+				}
 
+				Toast.makeText(FastApp.getContext(), "Event created with " + totInsertedImage+" images", Toast.LENGTH_LONG).show();
+				finish();
 			}
 		});
 
@@ -162,7 +176,7 @@ public class EventCreate extends Activity  {
 
 	}
 
-	private void addImagesToGrid(ImageItem imageItem) {
+	private void addImagesToGrid(ClassImage imageItem) {
 		imageItems.add(imageItem);
 		gridAdapter.notifyDataSetChanged();
 	}
@@ -221,7 +235,7 @@ public class EventCreate extends Activity  {
 			final Bitmap bitmap = BitmapFactory.decodeFile(fileUri.getPath(),
 					options);
 
-			ImageItem im = new ImageItem(bitmap,"IMG_"+(imageItems.size()+1),fileUri.getPath() );
+			ClassImage im = new ClassImage(bitmap,"IMG_"+(imageItems.size()+1),fileUri.getPath() );
 			addImagesToGrid(im);
 
 		} catch (NullPointerException e) {

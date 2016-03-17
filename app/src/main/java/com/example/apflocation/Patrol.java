@@ -100,7 +100,7 @@ public class Patrol extends Activity  {
 	        	
 	        	 if(patrol.Update())
 	        	 {	       		
-	        		Log.d("myLog","Patrol Updated as Fininshed" );
+	        		Log.d(FastConfig.appLogTag,"Patrol Updated as Fininshed" );
 
 					 FastConfig.appRunningPatrolID ="";
 	        		
