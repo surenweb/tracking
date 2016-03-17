@@ -1,24 +1,34 @@
 <resources>
 
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+
+        <!-- <item name="colorPrimary">@color/primary_darker</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+         -->
+
+        <!--  <item name="android:windowBackground">@color/primary</item> -->
+
+        <item name="colorControlNormal">@color/base</item>
+        <item name="colorControlActivated">@color/primary_darker</item>
+        <item name="colorControlHighlight">@color/primary_darker</item>
+        <item name="android:textColorHint">@color/base</item>
+        <item name="colorButtonNormal">@color/primary_dark</item>
+        <item name="android:colorButtonNormal">@color/primary_dark</item>
+
     </style>
 
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <!-- Dark Form (Login Register ) theme. -->
+    <style name="AppTheme.Dark" parent="AppTheme">
 
-         
     </style>
-    
-    <!--  Custom Styles  -->  
+
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/iron</item>
+        <item name="android:background">@color/primary</item>
+    </style>
 
 </resources>

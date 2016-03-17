@@ -2,8 +2,8 @@ package com.example.apflocation;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,11 +15,10 @@ import butterknife.ButterKnife;
 
 public class Register extends Activity {
 
-    @Bind(R.id.input_name)  EditText _nameText;
+    @Bind(R.id.input_staff_id)  EditText _staffID;
+    @Bind(R.id.input_phone_number)  EditText _phoneNo;
     @Bind(R.id.input_email) EditText _emailText;
-    @Bind(R.id.input_password) EditText _passwordText;
     @Bind(R.id.btn_signup)  Button _signupButton;
-    @Bind(R.id.link_login)  TextView _loginLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +33,6 @@ public class Register extends Activity {
             }
         });
 
-        _loginLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Finish the registration screen and return to the Login activity
-                finish();
-            }
-        });
     }
 
     public void signup() {
@@ -57,9 +49,9 @@ public class Register extends Activity {
         progressDialog.setMessage("Creating Account...");
         progressDialog.show();
 
-        String name = _nameText.getText().toString();
+        String staffID = _staffID.getText().toString();
         String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        String phoneNo = _phoneNo.getText().toString();
 
         // TODO: Implement your own signup logic here.
 
@@ -72,7 +64,7 @@ public class Register extends Activity {
                         // onSignupFailed();
                         progressDialog.dismiss();
                     }
-                }, 3000);
+                }, 10000);
     }
 
 
@@ -83,7 +75,7 @@ public class Register extends Activity {
     }
 
     public void onSignupFailed() {
-        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(), "Registration failed", Toast.LENGTH_LONG).show();
 
         _signupButton.setEnabled(true);
     }
@@ -91,15 +83,16 @@ public class Register extends Activity {
     public boolean validate() {
         boolean valid = true;
 
-        String name = _nameText.getText().toString();
+        String staffID = _staffID.getText().toString();
         String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        String phoneNo = _phoneNo.getText().toString();
 
-        if (name.isEmpty() || name.length() < 3) {
-            _nameText.setError("at least 3 characters");
+
+        if (staffID.isEmpty() || staffID.length() < 3) {
+            _staffID.setError("at least 3 numbers");
             valid = false;
         } else {
-            _nameText.setError(null);
+            _staffID.setError(null);
         }
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
@@ -109,15 +102,49 @@ public class Register extends Activity {
             _emailText.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("between 4 and 10 alphanumeric characters");
+        if (phoneNo.isEmpty() || phoneNo.length() < 5 || phoneNo.length() > 10) {
+            _phoneNo.setError("enter valid phone no.");
             valid = false;
         } else {
-            _passwordText.setError(null);
+            _phoneNo.setError(null);
         }
 
         return valid;
     }
 
+
+    //## ASYNC SERVER REGISTER METHOD
+
+    private class RegisterMobile extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected void onPreExecute() {
+
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            for (int i = 0; i < 5; i++) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.interrupted();
+                }
+            }
+            return "Executed";
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+
+            txt.setText("Executed"); // txt.setText(result);
+            // might want to change "executed" for the returned string passed
+            // into onPostExecute() but that is upto you
+        }
+
+
+        @Override
+        protected void onProgressUpdate(Void... values) {  }
+    }
 
 }
