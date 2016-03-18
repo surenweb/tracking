@@ -22,10 +22,14 @@ public class SplashScreen extends Activity {
             public void run() {
 
                 Intent i;
-                if(FastConfig.appMobileID.equalsIgnoreCase("9999"))
+                if(FastConfig.appMobileID.equalsIgnoreCase("0"))   // Mobile Not Registered
             	    i = new Intent(SplashScreen.this, Register.class);
+
+                else if (FastConfig.appVerified.equalsIgnoreCase("0"))  // Mobile Not Verified
+                    i =  new Intent(SplashScreen.this, RegisterVerify.class);
                 else
-                    i =  new Intent(SplashScreen.this, MainActivity.class);
+                    i =  new Intent(SplashScreen.this, MainActivity.class); // OK
+
             	startActivity(i);
                 finish();
                 

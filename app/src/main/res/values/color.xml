@@ -8,7 +8,7 @@
 
 	<color name="primary">#fea801</color>
 	<color name="primary_dark">#FE8F01</color>
-	<color name="primary_darker">#FE7801</color>
+	<color name="primary_darker">#D34D00</color> <!-- FE7801 -->
 	<color name="accent">#FFFFFF</color>
 
 	<color name="black">#000000</color>

@@ -210,7 +210,7 @@ public class FastServer {
     }
 
     //Master Page Caller
-    private String CallServer (String page,List<FastKeyValue> lstParamValue ) {
+    public String CallServer (String page,List<FastKeyValue> lstParamValue ) {
 
         HttpURLConnection urlConnection = null;
         URL url = null;

@@ -13,9 +13,16 @@ public class FastConfig {
 		public static String appRunningPatrolID;
 
 		//## Preference Setting Variable
+		//User-Setting
 		public static String appMobileID;
-		public static String appServerUrl;
-		public static String appRefreshTime;
+		public static String appStaffID;
+		public static String appPhoneNo;
+		public static String appEmail;
+		public static String appVerified;
+
+		//Important-Setting
+		public static String appServerUrl ;
+		public static String appRefreshTime ;
 		public static String appLanguage ;
 
 		//##Debug
@@ -33,23 +40,36 @@ public class FastConfig {
 		public static void LoadConfig ()
 		{
 			SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(FastApp.getContext());
-			appMobileID = settings.getString("appMobileID", "-1");
-			appServerUrl =  settings.getString("appServerUrl", "-1");
-			appRefreshTime =  settings.getString("appRefreshTime", "-1");
+			appMobileID = settings.getString("appMobileID", "0");
+			appStaffID = settings.getString("appStaffID", "0");
+			appPhoneNo = settings.getString("appPhoneNo", "0");
+			appEmail = settings.getString("appEmail", "0");
+			appVerified = settings.getString("appVerified", "0");
+
+			appServerUrl =  settings.getString("appServerUrl", "http://10.0.3.2/upload_service.php");
+			appRefreshTime =  settings.getString("appRefreshTime", "10");
 			appLanguage = settings.getString("appLanguage", "NP");
+
 		}
 
 		public static void SaveChanges () {
 			SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(FastApp.getContext());
 			Editor edit = settings.edit();
+
+			//User Setting
 			edit.putString("appMobileID", appMobileID );
+			edit.putString("appStaffID", appStaffID );
+			edit.putString("appPhoneNo", appPhoneNo );
+			edit.putString("appEmail", appEmail );
+			edit.putString("appVerified", appVerified );
+			//IMP SETTING
 			edit.putString("appServerUrl", appServerUrl );
 			edit.putString("appRefreshTime",appRefreshTime);
 			edit.putString("appLanguage",appLanguage);
 			edit.commit();
 		}
 
-		public static void Prepare()
+		public static void PrepareDB()
 		{
 			FastDb db = new FastDb("dbLocation",FastApp.getContext());
 			//## Create Database-Table if Not Exists
@@ -116,24 +136,6 @@ public class FastConfig {
 
 				if(!db.RunDml(sql))
 					Log.d(FastConfig.appLogTag,"Could't Insert Data in Meta Data Table " );
-			}
-
-			//## Load Application Config File
-			FastConfig.LoadConfig();
-
-			if(FastConfig.appMobileID.equalsIgnoreCase("-1") ) //## IF NO Setting
-			{
-				FastConfig.appMobileID = "9999";
-				FastConfig.appServerUrl = "http://172.16.0.214/apfLocation/upload_service.php";
-				FastConfig.appRefreshTime = "10" ;
-				FastConfig.appLanguage = "NP";
-				FastConfig.SaveChanges();
-
-				Log.d(FastConfig.appLogTag,"Default MobileId Given :" + FastConfig.appMobileID);
-			}
-			else
-			{
-				Log.d(FastConfig.appLogTag,"MobileID : "+ FastConfig.appMobileID );
 			}
 
 			//Fill Running Info

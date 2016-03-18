@@ -35,7 +35,10 @@ public class FastApp extends Application {
 					Toast.makeText(mContext, "Location Permission Not Found", Toast.LENGTH_SHORT).show();
 				}
 			}
-		FastConfig.Prepare();
+
+		FastConfig.LoadConfig();
+		FastConfig.PrepareDB();
+
 		SyncData();
 
 	}
