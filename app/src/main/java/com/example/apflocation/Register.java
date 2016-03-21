@@ -64,16 +64,20 @@ public class Register extends Activity {
 
     }
 
-    public void onSignupSuccess() {
+    public void onSignupSuccess(int argMobileID) {
         _signupButton.setEnabled(true);
         setResult(RESULT_OK, null);
 
         Toast.makeText(FastApp.getContext(), "Registered Successfully", Toast.LENGTH_LONG).show();
 
-        FastConfig.appMobileID = "1001";
+        FastConfig.appStaffID = _staffID.getText().toString();
+        FastConfig.appEmail = _emailText.getText().toString();
+        FastConfig.appPhoneNo = _phoneNo.getText().toString();
+        FastConfig.appMobileID = argMobileID+"" ;
+
         FastConfig.SaveChanges();
 
-        Log.d(FastConfig.appLogTag, "Default MobileId Given :" + FastConfig.appMobileID);
+        // Log.d(FastConfig.appLogTag, "Default MobileId Given :" + FastConfig.appMobileID);
 
         Intent i = new Intent(Register.this, RegisterVerify.class);
         startActivity(i);
@@ -162,25 +166,25 @@ public class Register extends Activity {
 
             Log.d(FastConfig.appLogTag, "Register Mobile response :" + result);
 
-            if(result.length()<1 )
+            if(result.length()>0  )
             {
-                Toast.makeText(FastApp.getContext(), "Error on registration", Toast.LENGTH_LONG);
-                return;
+                String resChar = result.substring(0, 1); // resText has id as first charecter
+                int mobID = FastTask.IsInt(resChar)? Integer.parseInt(resChar):0 ;
+
+                if(mobID > 0 ){
+                    Log.d(FastConfig.appLogTag, "Registered");
+                    onSignupSuccess(mobID);
+                }
+                else{
+                    Log.d(FastConfig.appLogTag, "Failed to register");
+                    onSignupFailed();
+                }
             }
-
-
-            String resChar = result.substring(0, 1); // resText has id as first charecter
-
-            int mobID = FastTask.IsInt(resChar)? Integer.parseInt()
-            if(resChar.equalsIgnoreCase("1")){
-                Log.d(FastConfig.appLogTag, "Registered");
-                onSignupSuccess();
-            }
-            else{
-                Log.d(FastConfig.appLogTag, "Failed to register");
+            else
+            {
+                Toast.makeText(FastApp.getContext(), "No response from server ", Toast.LENGTH_LONG).show();
                 onSignupFailed();
             }
-
 
            // progressBar.setVisibility(View.INVISIBLE);
            // progressDialog.hide();

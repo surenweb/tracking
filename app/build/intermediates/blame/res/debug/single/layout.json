@@ -16,12 +16,12 @@
         "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_lines.xml"
     },
     {
-        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_grid_item.xml",
-        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\layout_grid_item.xml"
-    },
-    {
         "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_event.xml",
         "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\activity_event.xml"
+    },
+    {
+        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_grid_item.xml",
+        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\layout_grid_item.xml"
     },
     {
         "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
@@ -154,6 +154,10 @@
     {
         "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
         "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register_verify.xml",
+        "source": "D:\\DevelopGit\\Android\\apfLocation\\app\\src\\main\\res\\layout\\activity_register_verify.xml"
     },
     {
         "merged": "D:\\DevelopGit\\Android\\apfLocation\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",

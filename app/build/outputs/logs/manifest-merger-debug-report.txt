@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:2:1-68:12
+ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:2:1-73:12
 	xmlns:android
 		ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:2:11-69
 	package
@@ -79,7 +79,7 @@ ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:25
 	android:name
 		ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:25:30-85
 application
-ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:27:5-66:19
+ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:27:5-71:19
 MERGED from [com.android.support:support-v4:23.1.1] D:\DevelopGit\Android\apfLocation\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.1.1] D:\DevelopGit\Android\apfLocation\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] D:\DevelopGit\Android\apfLocation\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
@@ -157,3 +157,11 @@ ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:61
 		ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:64:13-49
 	android:name
 		ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:62:13-37
+activity#com.example.apflocation.RegisterVerify
+ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:66:9-69:62
+	android:label
+		ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:68:13-35
+	android:theme
+		ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:69:13-49
+	android:name
+		ADDED from D:\DevelopGit\Android\apfLocation\app\src\main\AndroidManifest.xml:67:13-43

@@ -20,7 +20,7 @@ public class FastTask {
 	    return activeNetworkInfo != null && activeNetworkInfo.isConnected();
 	}
 
-	public boolean IsInt(String value) {
+	public static boolean IsInt(String value) {
 		try {
 			Integer.parseInt(value);
 			return true;

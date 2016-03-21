@@ -46,7 +46,7 @@ public class FastConfig {
 			appEmail = settings.getString("appEmail", "0");
 			appVerified = settings.getString("appVerified", "0");
 
-			appServerUrl =  settings.getString("appServerUrl", "http://10.0.3.2/upload_service.php");
+			appServerUrl =  settings.getString("appServerUrl", "http://10.0.3.2/apfLocation/");
 			appRefreshTime =  settings.getString("appRefreshTime", "10");
 			appLanguage = settings.getString("appLanguage", "NP");
 

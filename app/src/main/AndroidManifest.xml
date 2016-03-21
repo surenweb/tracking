@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="10"
-        android:targetSdkVersion="18" />
+        android:targetSdkVersion="23" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -61,6 +61,11 @@
         <activity
             android:name=".Register"
             android:label="Register"
+            android:theme="@style/AppTheme.Dark" ></activity>
+
+        <activity
+            android:name=".RegisterVerify"
+            android:label="Verify"
             android:theme="@style/AppTheme.Dark" ></activity>
 
     </application>

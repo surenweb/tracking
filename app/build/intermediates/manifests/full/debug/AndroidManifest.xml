@@ -61,6 +61,10 @@
             android:name="com.example.apflocation.Register"
             android:label="Register"
             android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name="com.example.apflocation.RegisterVerify"
+            android:label="Verify"
+            android:theme="@style/AppTheme.Dark" />
     </application>
 
 </manifest>

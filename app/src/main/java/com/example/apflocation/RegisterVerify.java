@@ -35,10 +35,20 @@ public class RegisterVerify extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_register_verify);
         ButterKnife.bind(this);
 
-        LoadConfig();
+        FastConfig.LoadConfig();
+        _mobileID.setText(FastConfig.appMobileID);
+        _staffID.setText(FastConfig.appStaffID);
+        _phoneNo.setText(FastConfig.appPhoneNo);
+        _emailText.setText(FastConfig.appEmail);
+
+        _mobileID.setFocusable(false);
+        _staffID.setFocusable(false);
+        _phoneNo.setFocusable(false);
+        _emailText.setFocusable(false);
+
 
         _reVerify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,24 +67,8 @@ public class RegisterVerify extends Activity {
 
     }
 
-    private void LoadConfig ()
-    {
-        //## Load Application Config File
-        FastConfig.LoadConfig();
-
-        if(FastConfig.appMobileID.equalsIgnoreCase("-1") ) //## IF NO Setting
-        {
-
-        }
-        else
-        {
-            Log.d(FastConfig.appLogTag, "MobileID : " + FastConfig.appMobileID);
-        }
-
-    }
-
     public void onVerifySuccess() {
-        _reVerify.setEnabled(true);
+
         setResult(RESULT_OK, null);
 
         Toast.makeText(FastApp.getContext(), "Verified Successfully", Toast.LENGTH_LONG).show();
@@ -85,11 +79,6 @@ public class RegisterVerify extends Activity {
         Intent i = new Intent(RegisterVerify.this, MainActivity.class);
         startActivity(i);
         finish();
-    }
-
-    public void onVerifyFailed() {
-        Toast.makeText(FastApp.getContext(), "Failed to register", Toast.LENGTH_LONG).show();
-        _reVerify.setEnabled(true);
     }
 
     //## ASYNC SERVER Verify METHOD
@@ -105,7 +94,7 @@ public class RegisterVerify extends Activity {
 
             progressDialog = new ProgressDialog(RegisterVerify.this, R.style.AppTheme_Dark_Dialog);
             progressDialog.setIndeterminate(true);
-            progressDialog.setMessage("Creating Account...");
+            progressDialog.setMessage("Checking account ...");
             progressDialog.show();
         }
 
@@ -119,8 +108,9 @@ public class RegisterVerify extends Activity {
 
             List<FastKeyValue> lstPostParams = new ArrayList<FastKeyValue>();
             lstPostParams.add(new FastKeyValue("task","register_verify"));
-            lstPostParams.add(new FastKeyValue("staffID",staffID));
-            lstPostParams.add(new FastKeyValue("mobileID",mobileID));
+            lstPostParams.add(new FastKeyValue("data","hello"));
+            lstPostParams.add(new FastKeyValue("staffID", staffID));
+            lstPostParams.add(new FastKeyValue("mobileID", mobileID));
 
             String resText = new FastServer().CallServer("", lstPostParams);
             return resText ;
@@ -131,25 +121,25 @@ public class RegisterVerify extends Activity {
 
             Log.d(FastConfig.appLogTag, "Register Mobile response :" + result);
 
-            if(result.length()<1 )
+            if(result.length()>0  ) {
+
+                String resChar = result.substring(0, 1); // resText May contain other info from service page
+
+                if(resChar.equalsIgnoreCase("1")){
+                    Log.d(FastConfig.appLogTag, "mobile verified ");
+                    onVerifySuccess();
+                }
+                else{
+                    Log.d(FastConfig.appLogTag, "mobile not verified ");
+                    Toast.makeText(FastApp.getContext(), "mobile not verified yet.", Toast.LENGTH_LONG).show();
+                }
+            }
+            else
             {
-                Toast.makeText(FastApp.getContext(), "Error on re-check", Toast.LENGTH_LONG);
-                return;
+                Toast.makeText(FastApp.getContext(), "No responce from server ", Toast.LENGTH_LONG).show();
             }
 
-
-            String resChar = result.substring(0, 1); // resText May contain other info from service page
-
-            if(resChar.equalsIgnoreCase("1")){
-                Log.d(FastConfig.appLogTag, "mobile verified ");
-                onVerifySuccess();
-            }
-            else{
-                Log.d(FastConfig.appLogTag, "mobile not verified ");
-                onVerifyFailed();
-            }
-
-
+            _reVerify.setEnabled(true);
            // progressBar.setVisibility(View.INVISIBLE);
            // progressDialog.hide();
             progressDialog.dismiss();

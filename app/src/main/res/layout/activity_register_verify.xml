@@ -19,6 +19,11 @@
             android:layout_marginBottom="24dp"
             android:layout_gravity="center_horizontal" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mobile is registered but waiting for verification"
+            />
         <!-- Mobile ID -->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -49,7 +54,8 @@
 
         </android.support.design.widget.TextInputLayout>
 
-        <!-- Name Label -->
+        <!--  User Registered Successfully.It takes less then 24 hour for user verification -->
+         <!-- Name Label -->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -78,7 +84,11 @@
                 android:hint="Email" />
         </android.support.design.widget.TextInputLayout>
 
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="It takes less then 24 hour for verification.For any queries: contact computer sakha "
+            />
         <!-- Signup Button -->
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_reVerify"
@@ -89,27 +99,6 @@
             android:padding="12dp"
             android:text="Re-Check"/>
 
-        <!--
-        <TextView android:id="@+id/link_login"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="Already a member? Login"
-            android:gravity="center"
-            android:textSize="16dip"/> -->
 
-             <!-- Password Label
-               <android.support.design.widget.TextInputLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_marginTop="8dp"
-                   android:layout_marginBottom="8dp">
-                   <EditText android:id="@+id/input_password"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:inputType="textPassword"
-                       android:hint="Password"/>
-               </android.support.design.widget.TextInputLayout>
-               -->
     </LinearLayout>
 </ScrollView>

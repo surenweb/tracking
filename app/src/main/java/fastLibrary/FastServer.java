@@ -212,13 +212,14 @@ public class FastServer {
     //Master Page Caller
     public String CallServer (String page,List<FastKeyValue> lstParamValue ) {
 
+        page = "upload_service.php";
         HttpURLConnection urlConnection = null;
         URL url = null;
         String response = "";
         InputStream inStream = null;
 
         try {
-            url = new URL(FastConfig.appServerUrl);
+            url = new URL(FastConfig.appServerUrl +page);
             urlConnection = (HttpURLConnection) url.openConnection();
 
             urlConnection.setReadTimeout(10000);
