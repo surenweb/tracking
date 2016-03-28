@@ -8,5 +8,6 @@
     <string-array name="image_ids">
         <item>@drawable/ic_launcher</item>
     </string-array>
+    <string name="title_activity_map">Map</string>
 
 </resources>

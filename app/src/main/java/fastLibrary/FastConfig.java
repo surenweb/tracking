@@ -1,8 +1,8 @@
 package fastLibrary;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -11,6 +11,8 @@ public class FastConfig {
 
 		//## Application Running Variable
 		public static String appRunningPatrolID;
+
+		public static Typeface fontMangal;
 
 		//## Preference Setting Variable
 		//User-Setting
@@ -46,9 +48,11 @@ public class FastConfig {
 			appEmail = settings.getString("appEmail", "0");
 			appVerified = settings.getString("appVerified", "0");
 
-			appServerUrl =  settings.getString("appServerUrl", "http://10.0.3.2/apfLocation/");
+			appServerUrl =  settings.getString("appServerUrl", "http://172.16.5.236/apfLocation/");
 			appRefreshTime =  settings.getString("appRefreshTime", "10");
 			appLanguage = settings.getString("appLanguage", "NP");
+
+			fontMangal = Typeface.createFromAsset(FastApp.getContext().getAssets(),"font/Kalimati.ttf");
 
 		}
 

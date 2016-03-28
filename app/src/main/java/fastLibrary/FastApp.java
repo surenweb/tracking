@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 public class FastApp extends Application {
 
+	//## API KEY - GOOGLE MAP - AIzaSyDJq_o19z9ao6D1B4kxqT0Je1V0-NDYG-Q
+
 	//## private
 	private static FastLocation locListener;
 	private static Context mContext;

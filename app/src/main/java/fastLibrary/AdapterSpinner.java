@@ -45,7 +45,7 @@ public class AdapterSpinner extends ArrayAdapter<FastKeyValue> {
 
     //## Custom views
 
-     /*
+
         @Override
         public View getView(int position, View convertView, ViewGroup prnt) {
 
@@ -57,6 +57,7 @@ public class AdapterSpinner extends ArrayAdapter<FastKeyValue> {
             //TextView tvText2 = (TextView)convertView.findViewById(android.R.id.text2);
             tvText1.setText(values.get(position).value);
             //tvText2.setText(getItem(position).distance);
+            tvText1.setTypeface(FastConfig.fontMangal);
             return convertView;
         }
 
@@ -69,9 +70,10 @@ public class AdapterSpinner extends ArrayAdapter<FastKeyValue> {
             TextView tvText1 = (TextView)convertView.findViewById(R.id.spin_dropdown_id);
             //TextView tvText2 = (TextView)convertView.findViewById(android.R.id.text2);
             tvText1.setText(values.get(position).value);
+            tvText1.setTypeface(FastConfig.fontMangal);
             //tvText2.setText(getItem(position).distance);
             return convertView;
         }
-    */
+
 
 }
