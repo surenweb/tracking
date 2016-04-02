@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
 		Button btnSetting =(Button) findViewById(R.id.btnSetting ); 
 		Button btnExit =(Button) findViewById(R.id.btnExit ); 
 		Button btnEvent = (Button) findViewById(R.id.btnEvent);
+		Button btnOld = (Button) findViewById(R.id.btnOld);
 
 		TextView lblMainMobileID = (TextView)findViewById(R.id.lblMainMobileID ) ;	
 		lblMainMobileID.setText("Mobile ID : "+ FastConfig.appMobileID );
@@ -59,6 +60,14 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(MainActivity.this,EventCreate.class);
+				startActivity(intent);
+			}
+		});
+
+		btnOld.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this,MapActivity.class);
 				startActivity(intent);
 			}
 		});
